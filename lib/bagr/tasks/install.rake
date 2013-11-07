@@ -4,12 +4,9 @@ desc 'Install Bagr, bagr install'
 task :install do
 
   config_dir = Pathname.new('config')
-  build_dir = config_dir.join('build')
 
   build_rb = File.expand_path("../../templates/build.rb.erb", __FILE__)
   bagrfile = File.expand_path("../../templates/Bagrfile", __FILE__)
-
-  mkdir_p build_dir
 
   template = File.read(build_rb)
   file = config_dir.join('build.rb')
