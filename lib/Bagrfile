@@ -1,0 +1,3 @@
+#!/usr/bin/env bagr
+include Bagr::DSL
+require 'bagr/install'

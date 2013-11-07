@@ -1,0 +1,5 @@
+# Load DSL
+require 'bagr/setup'
+
+# Includes default build tasks
+require 'bagr/build'

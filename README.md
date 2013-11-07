@@ -1,20 +1,40 @@
 # Bagr
 
-TODO: Write a gem description
+A simple DSL for building software packages. Which might look like this:
 
-## Installation
+```ruby
 
-Add this line to your application's Gemfile:
+set :application, 'my_package'
+set :package, 'deb'
+set :repo_url, 'git@example.com:me/my_repo.git'
 
-    gem 'bagr'
+namespace :build do
 
-And then execute:
+  desc 'Create directory structure'
+  task :structure do
+    pkg_path do
+      mkdir [ 'etc/init.d', 'var/log' ]
+      # execute :touch, 'README'
+    end
+  end
 
-    $ bundle
+  before :building, :structure
 
-Or install it yourself as:
+end
+```
 
-    $ gem install bagr
+## Workflow
+
+A typical workflow for building packages looks like this:
+
+  1. Fetch source code (git, tar)
+  2. Create fakeroot for new package, directory structure
+  3. Build: make, mvn install
+  4. Copy files into fakeroot
+  5. Create package (deb, rpm) with FPM
+
+
+## Warning: still under development
 
 ## Usage
 
