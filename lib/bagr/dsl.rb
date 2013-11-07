@@ -1,5 +1,6 @@
 require 'bagr/dsl/env'
 require 'bagr/dsl/paths'
+require 'bagr/dsl/os'
 require 'bagr/dsl/task_enhancements'
 
 module Bagr
@@ -7,6 +8,7 @@ module Bagr
 
     include Env
     include Paths
+    include OS
     include TaskEnhancements
 
     def invoke(task, *args)
