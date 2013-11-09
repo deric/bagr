@@ -1,7 +1,7 @@
 require 'erb'
 require 'pathname'
-desc 'Install Bagr, bagr install'
-task :install do
+desc 'Creates default Bagr config, bagr init'
+task :init do
 
   config_dir = Pathname.new('config')
 

@@ -56,10 +56,6 @@ module Bagr
         deploy_path.join('repo')
       end
 
-      def shared_path
-        deploy_path.join('shared')
-      end
-
       def revision_log
         deploy_path.join('revisions.log')
       end
