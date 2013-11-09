@@ -16,7 +16,15 @@ namespace :build do
   task :updated do
   end
 
-  desc 'Finish the deployment, cleaning up directories.'
+  desc 'Compile source code.'
+  task :compiling do
+  end
+
+  desc 'Compiled'
+  task :compiled do
+  end
+
+  desc 'Create package, cleaning up directories.'
   task :finishing do
   end
 
