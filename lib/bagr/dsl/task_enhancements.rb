@@ -14,7 +14,7 @@ module Bagr
     end
 
     def default_tasks
-      %w{install}
+      %w{init}
     end
 
     def exit_build_because_of_exception(ex)
