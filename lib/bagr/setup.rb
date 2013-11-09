@@ -2,6 +2,7 @@ include Bagr::DSL
 
 namespace :load do
   task :defaults do
+    set(:prj_dir, File.basename(Dir.getwd))
     load 'bagr/defaults.rb'
   end
 end

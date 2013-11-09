@@ -3,32 +3,20 @@ module Bagr
   module DSL
     module Paths
 
-      def deploy_to
-        fetch(:deploy_to)
+      def build_to
+        fetch(:build_to)
       end
 
-      def deploy_path
-        Pathname.new(deploy_to)
+      def build_path
+        Pathname.new(build_to)
+      end
+
+      def src_path
+        fetch(:src_dir)
       end
 
       def current_path
-        deploy_path.join('current')
-      end
-
-      def releases_path
-        deploy_path.join('releases')
-      end
-
-      def release_path
-        fetch(:release_path, current_path)
-      end
-
-      def set_release_path(timestamp=now)
-        set(:release_path, releases_path.join(timestamp))
-      end
-
-      def stage_config_path
-        Pathname.new fetch(:stage_config_path, 'config/deploy')
+        fetch(:prj_dir)
       end
 
       def build_config_path
@@ -53,11 +41,11 @@ module Bagr
       end
 
       def repo_path
-        deploy_path.join('repo')
+        build_path.join('repo')
       end
 
       def revision_log
-        deploy_path.join('revisions.log')
+        build_path.join('revisions.log')
       end
 
       def now

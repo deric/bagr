@@ -1,6 +1,6 @@
 set :scm, :git
 set :branch, :master
-set :tmp_dir, "/tmp"
+set :tmp_dir, "#{fetch(:prj_dir)}/tmp"
 
 set :default_env, {}
 

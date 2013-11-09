@@ -24,7 +24,7 @@ namespace :build do
   task :compiled do
   end
 
-  desc 'Create package, cleaning up directories.'
+  desc 'Creating package, cleaning up directories.'
   task :finishing do
   end
 
@@ -39,7 +39,7 @@ task :build do
   set(:building, true)
   %w{ starting started
       updating updated
-      publishing published
+      compiling compiled
       finishing finished }.each do |task|
     invoke "build:#{task}"
   end
