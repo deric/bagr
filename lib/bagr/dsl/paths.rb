@@ -1,4 +1,6 @@
+
 require 'pathname'
+
 module Bagr
   module DSL
     module Paths

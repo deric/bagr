@@ -2,6 +2,7 @@ require 'bagr/dsl/env'
 require 'bagr/dsl/paths'
 require 'bagr/dsl/os'
 require 'bagr/dsl/task_enhancements'
+require 'bagr/dsl/command_helper'
 
 module Bagr
   module DSL
@@ -10,6 +11,7 @@ module Bagr
     include Paths
     include OS
     include TaskEnhancements
+    include CommandHelper
 
     def invoke(task, *args)
       Rake::Task[task].invoke(*args)
